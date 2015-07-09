@@ -7,6 +7,8 @@ void merge_file(char*file1, char*file2){ /*merge 2 files and output sorted array
   int size;
   FILE *fp1;
   FILE *fp2;
+  char*fname_w="result1";
+  FILE*fpw;
   int a[N/4]; // from file1
   int b[N/4]; // from file2
   int c[N/2];// sorted array for out put
@@ -73,18 +75,21 @@ int work2=0;
     k++;
     }
   }
+  fpw=fopen(fname_w,"wb");
+  if(fpw==NULL){
+    printf("cannot open result\n", fname_w);
+    return -1;
+  }
+  
+  fwrite(c,sizeof(int),size,fpw);
+  fclose(fpw);
+  
 }
 
   int main (void){
   char*fname_1="temp1";
   char*fname_2="temp2";
-  char*fname_w="result1";
-  FILE*fpw;
   merge_file(fname_1, fname_2);
-  fpw=fopen(fname_w,"wb");
-  if(fpw==NULL){
-    printf("cannot open result\n", fname_w);
-    return -1;
   }
   
   fwrite(c,sizeof(int),size,fpw);
