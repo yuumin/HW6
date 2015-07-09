@@ -4,7 +4,7 @@
 
 void merge_file(char*file1, char*file2){ /*merge 2 files and output sorted array*/
  
-  
+  int size;
   FILE *fp1;
   FILE *fp2;
   int a[N/4]; // from file1
@@ -15,7 +15,7 @@ void merge_file(char*file1, char*file2){ /*merge 2 files and output sorted array
  fp1=fopen(file1,"rb");
   if(fp1==NULL){
     printf("cannot open\n");
-    return -1;
+    exit(1);
   }
   size=fread(a,sizeof(int) ,N/4, fp1);
   
@@ -23,7 +23,7 @@ void merge_file(char*file1, char*file2){ /*merge 2 files and output sorted array
   fp2=fopen(file2,"rb");
   if(fp2==NULL){
     printf("cannot open\n");
-    return -1;
+    exit(1);
   }
   size=fread(b,sizeof(int) ,N/4, fp2);
 
@@ -88,7 +88,6 @@ int work2=0;
   }
   
   fwrite(c,sizeof(int),size,fpw);
-  fclose(fpr);
   fclose(fpw);
   
   return 0;
