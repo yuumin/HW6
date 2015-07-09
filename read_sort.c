@@ -65,12 +65,12 @@ int main (void){
   char*fname_1="temp1";
   char*fname_2="temp2";
   char*fname_3="temp3";
-  char*fname_4-"temp4";
+  char*fname_4="temp4";
   char*fname_5="temp5";
   char*fname_6="temp6";
   char*fname_7="temp7";
   char*fname_8="temp8";
-  char*fname_r="test1";
+  char*fname_r="test100";
   int value[N];
   int size;
   int tmp=0;
@@ -176,3 +176,4 @@ int main (void){
   }
   fwrite(value,sizeof(int),size,fp8);
   fclose(fp8);
+}
