@@ -1,2 +1,11 @@
-# HW6
-steo hw 6 :system architecture
+hw1
+予想は jik=ijk<kji=kij=ikj=jki
+でしたが全く違いました。結果と表はtimememo.txtにあります
+
+hw2
+ループの順番を変えても木構造全体の大きさは変わらないからではないか
+
+hw3
+方針:少しずつソートしてファイルに出力しておく。あとで併合する。
+
+①
