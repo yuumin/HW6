@@ -1,8 +1,10 @@
 #include<stdio.h>
-#include <stlib.h>
+#include <stdlib.h>
 # define N 335545 //0.1GB/4/8 4byte=int  1.25GB for 10GB
 
 void merge_file(char*file1, char*file2){ /*merge 2 files and output sorted array*/
+ 
+  
   FILE *fp1;
   FILE *fp2;
   int a[N/4]; // from file1
@@ -72,5 +74,23 @@ int work2=0;
     }
   }
 }
+
+  int main (void){
+  char*fname_1="temp1";
+  char*fname_2="temp2";
+  char*fname_w="result1";
+  FILE*fpw;
+  merge_file(fname_1, fname_2);
+  fpw=fopen(fname_w,"wb");
+  if(fpw==NULL){
+    printf("cannot open result\n", fname_w);
+    return -1;
+  }
   
+  fwrite(c,sizeof(int),size,fpw);
+  fclose(fpr);
+  fclose(fpw);
+  
+  return 0;
+  }
  
